@@ -28,8 +28,75 @@ body {
    width: 450px;
    background-color: white;
    position: relative;
-   left: 33%;
    padding-top: 140px;
-   padding-bottom: 140px; 
+   padding-bottom: 140px;
+
  }
- 
+
+ .tweet-box {
+  border: 2px solid darkgrey;
+  border-radius: 10px;
+  margin: 2em;
+  padding: 6px;
+  position: relative;
+  color: #1c1c1c;
+  opacity: 0.8;
+ }
+ .user-image {
+  height: 70px;
+  width: 70px;
+ }
+
+ .tweet-header {
+  background-color: lightgrey;
+  margin: -6px;
+  padding: 6px;
+  height: 85px;
+  border-radius: 7px 7px 0px 0px;
+ }
+
+.username {
+  position: absolute;
+  left: 85px;
+  top: -6px;
+ }
+
+.user-image {
+  position: absolute;
+}
+
+.handle {
+  position: absolute;
+  right: 0px;
+  margin: 8px;
+  font-weight: lighter;
+}
+.center-me {
+  margin: 0 auto;
+}
+
+.time-ago {
+  border-top: 2px solid darkgrey;
+  margin: -6px;
+  padding: 12px;
+}
+
+.tweet-text {
+  padding: 6px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.tweet-box:hover {
+  border: 2px solid black;
+  color: black;
+  opacity: 1;
+ }
+
+ .icon {
+  float: left;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  color: #42b3f4;
+ }
