@@ -1,0 +1,27 @@
+.new-tweet {
+  background-color: lightgrey;
+  border: 2px solid darkgrey;
+  border-radius: 10px;
+  margin: 2em;
+  padding: 6px;
+  position: relative;
+ }
+
+ .new-tweet-header {
+   border-bottom: 2px black solid;
+   margin-top: 4px;
+ }
+
+ .textarea-new-tweet {
+   width: 100%;
+   padding: 8px;
+ }
+
+ .submit-tweet {
+ }
+
+ .counter {
+   position: absolute;
+   right: 12px;
+   bottom: 6px;
+ }
