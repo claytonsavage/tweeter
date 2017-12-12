@@ -99,4 +99,9 @@ body {
   right: 12px;
   bottom: 12px;
   color: #42b3f4;
+  opacity: 0;
+ }
+
+ .tweet-box:hover .icon{
+  opacity: 1;
  }
