@@ -3,8 +3,13 @@ $( document ).ready(function() {
     var maxkeysPressed = 140;
       var length = $(this).val().length;
       var length = maxkeysPressed - length;
-      console.log(length);
-      console.log($(this).parent().children('span.counter').text(length));
+      var counter = $(this).parent().children('span.counter');
+      counter.text(length);
+      if (length < 0) {
+        counter.css("color", 'red');
+      } if (length >= 0) {
+        counter.css("color", "black");
+      }
     });
 
 
