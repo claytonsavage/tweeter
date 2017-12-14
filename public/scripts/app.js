@@ -27,19 +27,19 @@ $(function() {
     const formText = ($('.textarea-new-tweet').val());
     const trimText = formText.trim();
     if (!trimText) {
-      $('.infoForUser').replaceWith('<div class="error" >tweet missing</div>')
+      $('.infoForUser').replaceWith('<div class="error infoForUser" >tweet missing</div>')
       return;
     } if ( trimText.length > 140 ) {
-      $('.infoForUser').replaceWith('<div class="error" >too many characters</div>')
+      $('.infoForUser').replaceWith('<div class="error infoForUser" >too many characters</div>')
       return;
     }
-
     $.ajax({
       method: 'POST',
       url: '/tweets',
       data: $(this).serialize()
     }).done(function () {
       event.target.reset();
+      $('.error').replaceWith('<div class="infoForUser"><div>')
       // update DOM after hearing back from server
       loadTweets();
     });
@@ -57,5 +57,10 @@ $(function() {
     };
 loadTweets();
 
+$( ".toggleButton" ).click(function() {
+  $( ".wrapper" ).slideToggle( 80, function() {
+  $( ".textarea-new-tweet" ).select();
+  });
+});
 
 });

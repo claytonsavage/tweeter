@@ -20,3 +20,35 @@
 #nav-bar .header {
     line-height: 80px;
 }
+
+.toggleButton {
+    background-color: #e8fdff;
+    color: #00a087;
+    position: relative;
+    width: 140px;
+    top: -83px;
+    left: 60vw;
+    height: 65px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.fa-pencil-square-o {
+    position: absolute;
+    top: 15px;
+    left: 8px;
+}
+
+.navP {
+    position: absolute;
+    top: -6px;
+    left: 40px;
+    font-size: 0.7em;
+
+}
+
+.toggleButton:hover {
+    background-color: white;
+    color: black;
+}
