@@ -93,15 +93,18 @@ body {
   opacity: 1;
  }
 
- .icon {
-  float: left;
+.icon {
   position: absolute;
+  bottom: 13px;
   right: 12px;
-  bottom: 12px;
+}
+.icon i{
+  float: left;
   color: #42b3f4;
   opacity: 0;
+  margin: 0 2px;
  }
 
- .tweet-box:hover .icon{
+.tweet-box:hover .icon i{
   opacity: 1;
  }
