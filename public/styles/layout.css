@@ -85,6 +85,7 @@ body {
   padding: 6px;
   padding-bottom: 20px;
   padding-top: 20px;
+  overflow-wrap: break-word;
 }
 
 .tweet-box:hover {
@@ -108,3 +109,16 @@ body {
 .tweet-box:hover .icon i{
   opacity: 1;
  }
+
+.error {
+  color: red;
+  font-weight: 700;
+  position: absolute;
+  left: 2em;
+  top: 120px;
+  background-color: #e0acac;
+  width: 385px;
+  padding: 10px;
+  border: solid 2px red;
+  border-radius: 10px;
+}

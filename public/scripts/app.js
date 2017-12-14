@@ -1,7 +1,7 @@
 $(function() {
 
   function renderTweets(tweets){
-        $('#tweet-container').append(tweets.map(createdTweet => createTweetElement(createdTweet)));
+        $('#tweet-container').empty().append(tweets.map(createdTweet => createTweetElement(createdTweet)));
   };
 
 
@@ -24,8 +24,13 @@ $(function() {
   $('form').on('submit', function (event) {
     event.preventDefault();
     //validation
-    if (data === "" || data === null) {
-      console.log('error')
+    const formText = ($('.textarea-new-tweet').val());
+    const trimText = formText.trim();
+    if (!trimText) {
+      $('.infoForUser').replaceWith('<div class="error" >tweet missing</div>')
+      return;
+    } if ( trimText.length > 140 ) {
+      $('.infoForUser').replaceWith('<div class="error" >too many characters</div>')
       return;
     }
 
@@ -36,6 +41,7 @@ $(function() {
     }).done(function () {
       event.target.reset();
       // update DOM after hearing back from server
+      loadTweets();
     });
   })
 
@@ -45,7 +51,7 @@ $(function() {
         method: 'GET',
         dataType: 'JSON',
         success: function (morePostsJSON) {
-          renderTweets(morePostsJSON)
+          renderTweets(morePostsJSON.reverse())
         }
       });
     };

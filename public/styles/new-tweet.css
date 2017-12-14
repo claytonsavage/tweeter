@@ -15,6 +15,7 @@
  .textarea-new-tweet {
    width: 100%;
    padding: 8px;
+   resize: none;
  }
 
  .submit-tweet {
