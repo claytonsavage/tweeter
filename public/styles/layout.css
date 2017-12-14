@@ -59,6 +59,7 @@ body {
   position: absolute;
   left: 85px;
   top: -6px;
+  overflow-wrap: break-word;
  }
 
 .user-image {
