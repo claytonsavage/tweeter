@@ -14,7 +14,7 @@ $(function() {
     const dayInMs = 86400000;
     const minutesInMs = 60000;
     if ((Date.now() - value.created_at) < dayInMs) {
-    var $footer = $('<footer>').text((((Date.now() - value.created_at)/minutesInMs)-17).toFixed (0) + ' minutes ago').addClass("time-ago");
+    var $footer = $('<footer>').text((((Date.now() - value.created_at)/minutesInMs)).toFixed (0) + ' minutes ago').addClass("time-ago");
     } if ((Date.now() - value.created_at) > dayInMs) {
     var $footer = $('<footer>').text(((Date.now() - value.created_at)/dayInMs).toFixed (0) + ' days ago').addClass("time-ago");
 
@@ -48,6 +48,7 @@ $(function() {
       data: $(this).serialize()
     }).done(function () {
       event.target.reset();
+      $('.counter').text('140')
       $('.error').replaceWith('<div class="infoForUser"><div>')
       // update DOM after hearing back from server
       loadTweets();
