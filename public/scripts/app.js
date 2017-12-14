@@ -6,12 +6,21 @@ $(function() {
 
 
   function createTweetElement(value){
-    var $img = $('<img>').attr("src",value.user.avatars.regular).addClass("user-image");
-    var $h2 = $('<h2>').text(value.user.name).addClass("username");
-    var $h3 = $('<h3>').text(value.user.handle).addClass("handle");
-    var $header = $('<header>').addClass("tweet-header").append($img, $h2, $h3);
-    var $content = $('<p>').text(value.content.text).addClass("tweet-text");
-    var $footer = $('<footer>').text(((Date.now() - value.created_at)/86400000).toFixed (0) + ' days ago').addClass("time-ago");
+    const $img = $('<img>').attr("src",value.user.avatars.regular).addClass("user-image");
+    const $h2 = $('<h2>').text(value.user.name).addClass("username");
+    const $h3 = $('<h3>').text(value.user.handle).addClass("handle");
+    const $header = $('<header>').addClass("tweet-header").append($img, $h2, $h3);
+    const $content = $('<p>').text(value.content.text).addClass("tweet-text");
+    const dayInMs = 86400000;
+    const minutesInMs = 60000;
+    if ((Date.now() - value.created_at) < dayInMs) {
+    var $footer = $('<footer>').text((((Date.now() - value.created_at)/minutesInMs)-17).toFixed (0) + ' minutes ago').addClass("time-ago");
+    } if ((Date.now() - value.created_at) > dayInMs) {
+    var $footer = $('<footer>').text(((Date.now() - value.created_at)/dayInMs).toFixed (0) + ' days ago').addClass("time-ago");
+
+    }
+
+
     var $iconHeart = $('<i>').addClass('fa fa-heart').attr('aria-hidden', true);
     var $iconRetweet = $('<i>').addClass('fa fa-flag').attr('aria-hidden', true);
     var $iconFlag = $('<i>').addClass('fa fa-retweet').attr('aria-hidden', true);
@@ -59,7 +68,7 @@ loadTweets();
 
 $( ".toggleButton" ).click(function() {
   $( ".wrapper" ).slideToggle( 80, function() {
-  $( ".textarea-new-tweet" ).select();
+  $( ".textarea-new-tweet" ).focus();
   });
 });
 
