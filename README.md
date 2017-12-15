@@ -20,5 +20,4 @@ connect to the server via localhost:8080
 - mongodb: ^2.2.33
 
 ## Screenshots
-
-(https://github.com/claytonsavage/tweeter/blob/master/documents/main.png)
+![main page](https://github.com/claytonsavage/tweeter/blob/master/documents/main.png?raw=true "mainpage")
