@@ -9,11 +9,14 @@ $(function() {
     const $content = $('<p>').text(value.content.text).addClass("tweet-text");
     const dayInMs = 86400000;
     const minutesInMs = 60000;
+    const hoursInMs = 3600000;
     let footer;
-    if ((Date.now() - value.created_at) < dayInMs) {
+    if ((Date.now() - value.created_at) < hoursInMs) {
       $footer = $('<footer>').text((((Date.now() - value.created_at) / minutesInMs)).toFixed(0) + ' minutes ago').addClass("time-ago");
     } if ((Date.now() - value.created_at) > dayInMs) {
       $footer = $('<footer>').text(((Date.now() - value.created_at) / dayInMs).toFixed(0) + ' days ago').addClass("time-ago");
+    }  if ((Date.now() - value.created_at) < dayInMs && (Date.now() - value.created_at) > hoursInMs) {
+      $footer = $('<footer>').text(((Date.now() - value.created_at) / hoursInMs).toFixed(0) + ' hours ago').addClass("time-ago");
     }
     var $iconHeart = $('<i>').addClass('fa fa-heart').attr('aria-hidden', true);
     var $iconRetweet = $('<i>').addClass('fa fa-flag').attr('aria-hidden', true);
