@@ -21,5 +21,4 @@ connect to the server via localhost:8080
 
 ## Screenshots
 
-()
-()
+(https://github.com/claytonsavage/tweeter/blob/master/documents/main.png)
