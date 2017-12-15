@@ -8,12 +8,13 @@ this app currently generates a random user for each tweet as you create new twee
 
 ## Getting Started
 
-
+get started by running >npm run local
+connect to the server via localhost:8080
 
 ## Dependencies
 
-- "body-parser": "^1.15.2",
-- "chance": "^1.0.2",
-- "express": "^4.13.4",
-- "md5": "^2.1.0",
-- "mongodb": "^2.2.33"
+- body-parser: ^1.15.2,
+- chance: ^1.0.2,
+- express: ^4.13.4,
+- md5: ^2.1.0,
+- mongodb: ^2.2.33
